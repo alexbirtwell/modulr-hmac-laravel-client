@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Model;
+namespace AlexBirtwell\ModulrHmacLaravel\Model;
 
 use ArrayAccess;
 
@@ -57,7 +57,7 @@ class PartyDetail implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'identifier' => '\CrowdProperty\ModulrHmacPhpClient\Model\AccountIdentifierDetail',
+        'identifier' => '\AlexBirtwell\ModulrHmacLaravel\Model\AccountIdentifierDetail',
         'name'       => 'string',
     ];
 
@@ -155,7 +155,7 @@ class PartyDetail implements ArrayAccess
     /**
      * Gets identifier.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\AccountIdentifierDetail
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\AccountIdentifierDetail
      */
     public function getIdentifier()
     {
@@ -165,7 +165,7 @@ class PartyDetail implements ArrayAccess
     /**
      * Sets identifier.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\AccountIdentifierDetail $identifier
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\AccountIdentifierDetail $identifier
      *
      * @return $this
      */
@@ -261,9 +261,9 @@ class PartyDetail implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

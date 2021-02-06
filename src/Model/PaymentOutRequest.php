@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Model;
+namespace AlexBirtwell\ModulrHmacLaravel\Model;
 
 use ArrayAccess;
 
@@ -58,7 +58,7 @@ class PaymentOutRequest implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'amount'             => 'double',
-        'destination'        => '\CrowdProperty\ModulrHmacPhpClient\Model\Destination',
+        'destination'        => '\AlexBirtwell\ModulrHmacLaravel\Model\Destination',
         'external_reference' => 'string',
         'reference'          => 'string',
         'source_account_id'  => 'string',
@@ -243,7 +243,7 @@ class PaymentOutRequest implements ArrayAccess
     /**
      * Gets destination.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\Destination
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\Destination
      */
     public function getDestination()
     {
@@ -253,7 +253,7 @@ class PaymentOutRequest implements ArrayAccess
     /**
      * Sets destination.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\Destination $destination Destination of the Payment
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\Destination $destination Destination of the Payment
      *
      * @return $this
      */
@@ -404,9 +404,9 @@ class PaymentOutRequest implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

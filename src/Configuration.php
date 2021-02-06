@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient;
+namespace AlexBirtwell\ModulrHmacLaravel;
 
 /**
  * Configuration Class Doc Comment
@@ -711,7 +711,7 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report = 'PHP SDK (CrowdProperty\ModulrHmacPhpClient) Debug Report:'.PHP_EOL;
+        $report = 'PHP SDK (AlexBirtwell\ModulrHmacLaravel) Debug Report:'.PHP_EOL;
         $report .= '    OS: '.php_uname().PHP_EOL;
         $report .= '    PHP Version: '.phpversion().PHP_EOL;
         $report .= '    OpenAPI Spec Version: 1'.PHP_EOL;

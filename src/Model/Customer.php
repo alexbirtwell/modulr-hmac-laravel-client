@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Model;
+namespace AlexBirtwell\ModulrHmacLaravel\Model;
 
 use ArrayAccess;
 
@@ -57,19 +57,19 @@ class Customer implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'associates'             => '\CrowdProperty\ModulrHmacPhpClient\Model\Associate[]',
+        'associates'             => '\AlexBirtwell\ModulrHmacLaravel\Model\Associate[]',
         'company_reg_number'     => 'string',
         'created_date'           => '\DateTime',
-        'document_info'          => '\CrowdProperty\ModulrHmacPhpClient\Model\Document[]',
+        'document_info'          => '\AlexBirtwell\ModulrHmacLaravel\Model\Document[]',
         'expected_monthly_spend' => 'int',
         'external_reference'     => 'string',
         'id'                     => 'string',
         'industry_code'          => 'string',
         'name'                   => 'string',
-        'registered_address'     => '\CrowdProperty\ModulrHmacPhpClient\Model\Address',
+        'registered_address'     => '\AlexBirtwell\ModulrHmacLaravel\Model\Address',
         'status'                 => 'string',
         'tcs_version'            => 'int',
-        'trading_address'        => '\CrowdProperty\ModulrHmacPhpClient\Model\Address',
+        'trading_address'        => '\AlexBirtwell\ModulrHmacLaravel\Model\Address',
         'type'                   => 'string',
         'verification_status'    => 'string',
     ];
@@ -350,7 +350,7 @@ class Customer implements ArrayAccess
     /**
      * Gets associates.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\Associate[]
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\Associate[]
      */
     public function getAssociates()
     {
@@ -360,7 +360,7 @@ class Customer implements ArrayAccess
     /**
      * Sets associates.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\Associate[] $associates Array of associate objects that link to the Customer. For example, this could contain the details of the company directors for a Limited company, or or the partners for a partnership.
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\Associate[] $associates Array of associate objects that link to the Customer. For example, this could contain the details of the company directors for a Limited company, or or the partners for a partnership.
      *
      * @return $this
      */
@@ -422,7 +422,7 @@ class Customer implements ArrayAccess
     /**
      * Gets document_info.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\Document[]
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\Document[]
      */
     public function getDocumentInfo()
     {
@@ -432,7 +432,7 @@ class Customer implements ArrayAccess
     /**
      * Sets document_info.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\Document[] $document_info Array of document objects that relate to the Customer being created. Examples of Documents could be proof of a Company Director's identity or address, Articles of Association or a Partnership Agreement.
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\Document[] $document_info Array of document objects that relate to the Customer being created. Examples of Documents could be proof of a Company Director's identity or address, Articles of Association or a Partnership Agreement.
      *
      * @return $this
      */
@@ -566,7 +566,7 @@ class Customer implements ArrayAccess
     /**
      * Gets registered_address.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\Address
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\Address
      */
     public function getRegisteredAddress()
     {
@@ -576,7 +576,7 @@ class Customer implements ArrayAccess
     /**
      * Sets registered_address.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\Address $registered_address The address of the company's registered office.
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\Address $registered_address The address of the company's registered office.
      *
      * @return $this
      */
@@ -642,7 +642,7 @@ class Customer implements ArrayAccess
     /**
      * Gets trading_address.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\Address
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\Address
      */
     public function getTradingAddress()
     {
@@ -652,7 +652,7 @@ class Customer implements ArrayAccess
     /**
      * Sets trading_address.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\Address $trading_address The address of the company's day-to-day trading activities.
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\Address $trading_address The address of the company's day-to-day trading activities.
      *
      * @return $this
      */
@@ -780,9 +780,9 @@ class Customer implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

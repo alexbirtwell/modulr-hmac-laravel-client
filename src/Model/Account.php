@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Model;
+namespace AlexBirtwell\ModulrHmacLaravel\Model;
 
 use ArrayAccess;
 
@@ -63,7 +63,7 @@ class Account implements ArrayAccess
         'customer_id'        => 'string',
         'external_reference' => 'string',
         'id'                 => 'string',
-        'identifiers'        => '\CrowdProperty\ModulrHmacPhpClient\Model\AccountIdentifier[]',
+        'identifiers'        => '\AlexBirtwell\ModulrHmacLaravel\Model\AccountIdentifier[]',
         'name'               => 'string',
         'status'             => 'string',
     ];
@@ -412,7 +412,7 @@ class Account implements ArrayAccess
     /**
      * Gets identifiers.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\AccountIdentifier[]
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\AccountIdentifier[]
      */
     public function getIdentifiers()
     {
@@ -422,7 +422,7 @@ class Account implements ArrayAccess
     /**
      * Sets identifiers.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\AccountIdentifier[] $identifiers
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\AccountIdentifier[] $identifiers
      *
      * @return $this
      */
@@ -546,9 +546,9 @@ class Account implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

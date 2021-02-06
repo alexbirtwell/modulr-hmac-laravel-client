@@ -26,10 +26,10 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Api;
+namespace AlexBirtwell\ModulrHmacLaravel\Api;
 
-use CrowdProperty\ModulrHmacPhpClient\ApiClient;
-use CrowdProperty\ModulrHmacPhpClient\ApiException;
+use AlexBirtwell\ModulrHmacLaravel\ApiClient;
+use AlexBirtwell\ModulrHmacLaravel\ApiException;
 
 /**
  * BeneficiariesApi Class Doc Comment.
@@ -45,16 +45,16 @@ class BeneficiariesApi
     /**
      * API Client.
      *
-     * @var \CrowdProperty\ModulrHmacPhpClient\ApiClient instance of the ApiClient
+     * @var \AlexBirtwell\ModulrHmacLaravel\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\ApiClient|null $apiClient The api client to use
+     * @param \AlexBirtwell\ModulrHmacLaravel\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient = null)
+    public function __construct(\AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -66,7 +66,7 @@ class BeneficiariesApi
     /**
      * Get API client.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\ApiClient get the API client
+     * @return \AlexBirtwell\ModulrHmacLaravel\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -76,11 +76,11 @@ class BeneficiariesApi
     /**
      * Set the API client.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient set the API client
+     * @param \AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient set the API client
      *
      * @return BeneficiariesApi
      */
-    public function setApiClient(\CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient)
+    public function setApiClient(\AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
 
@@ -93,11 +93,11 @@ class BeneficiariesApi
      * Create Beneficiary
      *
      * @param string                                                            $cid                        Id of Customer to create Beneficiary for (required)
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\CreateBeneficiaryRequest $create_beneficiary_request createBeneficiaryRequest (required)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\CreateBeneficiaryRequest $create_beneficiary_request createBeneficiaryRequest (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\Beneficiary
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\Beneficiary
      */
     public function createBeneficiary($cid, $create_beneficiary_request)
     {
@@ -112,11 +112,11 @@ class BeneficiariesApi
      * Create Beneficiary
      *
      * @param string                                                            $cid                        Id of Customer to create Beneficiary for (required)
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\CreateBeneficiaryRequest $create_beneficiary_request createBeneficiaryRequest (required)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\CreateBeneficiaryRequest $create_beneficiary_request createBeneficiaryRequest (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\Beneficiary, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\Beneficiary, HTTP status code, HTTP response headers (array of strings)
      */
     public function createBeneficiaryWithHttpInfo($cid, $create_beneficiary_request)
     {
@@ -176,15 +176,15 @@ class BeneficiariesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\Beneficiary',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\Beneficiary',
                 '/customers/{cid}/beneficiaries'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\Beneficiary', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\Beneficiary', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\Beneficiary', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\Beneficiary', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -201,9 +201,9 @@ class BeneficiariesApi
      * @param string   $cid Id of Customer to delete Beneficiaries for (required)
      * @param string[] $bid Id(s) of Beneficiaries to delete, must owned by customer and active (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\MessageResponse
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\MessageResponse
      */
     public function deleteBeneficiaries($cid, $bid)
     {
@@ -220,9 +220,9 @@ class BeneficiariesApi
      * @param string   $cid Id of Customer to delete Beneficiaries for (required)
      * @param string[] $bid Id(s) of Beneficiaries to delete, must owned by customer and active (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteBeneficiariesWithHttpInfo($cid, $bid)
     {
@@ -283,19 +283,19 @@ class BeneficiariesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\MessageResponse',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\MessageResponse',
                 '/customers/{cid}/beneficiaries'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\MessageResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\MessageResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\MessageResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\MessageResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 207:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\MessageResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\MessageResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -318,9 +318,9 @@ class BeneficiariesApi
      * @param string    $sort_code      Sort code (optional)
      * @param string    $account_number Account number (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\PageResponseBeneficiary_
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\PageResponseBeneficiary_
      */
     public function getBeneficiariesUsingGET($id = null, $customer_id = null, $page = null, $size = null, $created_date = null, $partial_name = null, $sort_code = null, $account_number = null)
     {
@@ -343,9 +343,9 @@ class BeneficiariesApi
      * @param string    $sort_code      Sort code (optional)
      * @param string    $account_number Account number (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\PageResponseBeneficiary_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\PageResponseBeneficiary_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBeneficiariesUsingGETWithHttpInfo($id = null, $customer_id = null, $page = null, $size = null, $created_date = null, $partial_name = null, $sort_code = null, $account_number = null)
     {
@@ -418,15 +418,15 @@ class BeneficiariesApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponseBeneficiary_',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponseBeneficiary_',
                 '/beneficiaries'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponseBeneficiary_', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponseBeneficiary_', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponseBeneficiary_', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponseBeneficiary_', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

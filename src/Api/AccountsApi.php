@@ -26,10 +26,10 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Api;
+namespace AlexBirtwell\ModulrHmacLaravel\Api;
 
-use CrowdProperty\ModulrHmacPhpClient\ApiClient;
-use CrowdProperty\ModulrHmacPhpClient\ApiException;
+use AlexBirtwell\ModulrHmacLaravel\ApiClient;
+use AlexBirtwell\ModulrHmacLaravel\ApiException;
 
 /**
  * AccountsApi Class Doc Comment.
@@ -45,16 +45,16 @@ class AccountsApi
     /**
      * API Client.
      *
-     * @var \CrowdProperty\ModulrHmacPhpClient\ApiClient instance of the ApiClient
+     * @var \AlexBirtwell\ModulrHmacLaravel\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\ApiClient|null $apiClient The api client to use
+     * @param \AlexBirtwell\ModulrHmacLaravel\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient = null)
+    public function __construct(\AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -66,7 +66,7 @@ class AccountsApi
     /**
      * Get API client.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\ApiClient get the API client
+     * @return \AlexBirtwell\ModulrHmacLaravel\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -76,11 +76,11 @@ class AccountsApi
     /**
      * Set the API client.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient set the API client
+     * @param \AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient set the API client
      *
      * @return AccountsApi
      */
-    public function setApiClient(\CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient)
+    public function setApiClient(\AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
 
@@ -94,7 +94,7 @@ class AccountsApi
      *
      * @param string $id Id of Account to close (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
      * @return void
      */
@@ -112,7 +112,7 @@ class AccountsApi
      *
      * @param string $id Id of Account to close (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
@@ -183,11 +183,11 @@ class AccountsApi
      * Create Account for a Customer
      *
      * @param string                                                        $cid     Id of Customer to create account for (required)
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\CreateAccountRequest $account Details of Account to create (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\CreateAccountRequest $account Details of Account to create (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\Account
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\Account
      */
     public function createAccount($cid, $account = null)
     {
@@ -202,11 +202,11 @@ class AccountsApi
      * Create Account for a Customer
      *
      * @param string                                                        $cid     Id of Customer to create account for (required)
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\CreateAccountRequest $account Details of Account to create (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\CreateAccountRequest $account Details of Account to create (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\Account, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\Account, HTTP status code, HTTP response headers (array of strings)
      */
     public function createAccountWithHttpInfo($cid, $account = null)
     {
@@ -262,15 +262,15 @@ class AccountsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\Account',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\Account',
                 '/customers/{cid}/accounts'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\Account', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\Account', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\Account', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\Account', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -285,11 +285,11 @@ class AccountsApi
      * Edit Account by id
      *
      * @param string                                                        $id                 Id of Account to be edited (required)
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\UpdateAccountRequest $external_reference New external reference for account (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\UpdateAccountRequest $external_reference New external reference for account (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\Account
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\Account
      */
     public function editAccount($id, $external_reference = null)
     {
@@ -304,11 +304,11 @@ class AccountsApi
      * Edit Account by id
      *
      * @param string                                                        $id                 Id of Account to be edited (required)
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\UpdateAccountRequest $external_reference New external reference for account (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\UpdateAccountRequest $external_reference New external reference for account (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\Account, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\Account, HTTP status code, HTTP response headers (array of strings)
      */
     public function editAccountWithHttpInfo($id, $external_reference = null)
     {
@@ -364,15 +364,15 @@ class AccountsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\Account',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\Account',
                 '/accounts/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\Account', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\Account', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\Account', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\Account', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -388,9 +388,9 @@ class AccountsApi
      *
      * @param string $id Id of Account to fetch (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\Account
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\Account
      */
     public function getAccountUsingGET($id)
     {
@@ -406,9 +406,9 @@ class AccountsApi
      *
      * @param string $id Id of Account to fetch (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\Account, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\Account, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountUsingGETWithHttpInfo($id)
     {
@@ -458,15 +458,15 @@ class AccountsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\Account',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\Account',
                 '/accounts/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\Account', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\Account', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\Account', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\Account', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -491,9 +491,9 @@ class AccountsApi
      * @param string   $sort_field        Sort by field (optional)
      * @param string   $sort_order        Sorting order (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\PageResponseAccount_
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\PageResponseAccount_
      */
     public function getAccounts($id = null, $q = null, $min_balance = null, $max_balance = null, $from_created_date = null, $to_created_date = null, $page = null, $size = null, $sort_field = null, $sort_order = null)
     {
@@ -518,9 +518,9 @@ class AccountsApi
      * @param string   $sort_field        Sort by field (optional)
      * @param string   $sort_order        Sorting order (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\PageResponseAccount_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\PageResponseAccount_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountsWithHttpInfo($id = null, $q = null, $min_balance = null, $max_balance = null, $from_created_date = null, $to_created_date = null, $page = null, $size = null, $sort_field = null, $sort_order = null)
     {
@@ -601,15 +601,15 @@ class AccountsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponseAccount_',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponseAccount_',
                 '/accounts'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponseAccount_', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponseAccount_', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponseAccount_', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponseAccount_', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -633,9 +633,9 @@ class AccountsApi
      * @param string $sort_field        Sort by field (optional)
      * @param string $sort_order        Sorting order (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\PageResponseAccount_
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\PageResponseAccount_
      */
     public function getAccountsByCustomerUsingGET1($cid, $min_balance = null, $max_balance = null, $from_created_date = null, $to_created_date = null, $page = null, $size = null, $sort_field = null, $sort_order = null)
     {
@@ -659,9 +659,9 @@ class AccountsApi
      * @param string $sort_field        Sort by field (optional)
      * @param string $sort_order        Sorting order (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\PageResponseAccount_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\PageResponseAccount_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAccountsByCustomerUsingGET1WithHttpInfo($cid, $min_balance = null, $max_balance = null, $from_created_date = null, $to_created_date = null, $page = null, $size = null, $sort_field = null, $sort_order = null)
     {
@@ -743,15 +743,15 @@ class AccountsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponseAccount_',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponseAccount_',
                 '/customers/{cid}/accounts'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponseAccount_', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponseAccount_', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponseAccount_', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponseAccount_', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

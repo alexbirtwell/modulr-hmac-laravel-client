@@ -1,9 +1,9 @@
 <?php
 
-namespace CrowdProperty\ModulrHmacPhpClient\Api;
+namespace AlexBirtwell\ModulrHmacLaravel\Api;
 
-use CrowdProperty\ModulrHmacPhpClient\ApiClient;
-use CrowdProperty\ModulrHmacPhpClient\ApiException;
+use AlexBirtwell\ModulrHmacLaravel\ApiClient;
+use AlexBirtwell\ModulrHmacLaravel\ApiException;
 
 /**
  * Documents Class Doc Comment.
@@ -17,16 +17,16 @@ class DocumentUploadApi
     /**
      * API Client.
      *
-     * @var \CrowdProperty\ModulrHmacPhpClient\ApiClient instance of the ApiClient
+     * @var \AlexBirtwell\ModulrHmacLaravel\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\ApiClient|null $apiClient The api client to use
+     * @param \AlexBirtwell\ModulrHmacLaravel\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient = null)
+    public function __construct(\AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -38,7 +38,7 @@ class DocumentUploadApi
     /**
      * Get API client.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\ApiClient get the API client
+     * @return \AlexBirtwell\ModulrHmacLaravel\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -48,11 +48,11 @@ class DocumentUploadApi
     /**
      * Set the API client.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient set the API client
+     * @param \AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient set the API client
      *
      * @return DocumentUploadApi
      */
-    public function setApiClient(\CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient)
+    public function setApiClient(\AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
 
@@ -64,11 +64,11 @@ class DocumentUploadApi
      *
      * Create Account for a Customer
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\DocumentUpload $account Details of Account to create (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\DocumentUpload $account Details of Account to create (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\Account, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\Account, HTTP status code, HTTP response headers (array of strings)
      */
     public function uploadDocument($document)
     {
@@ -112,15 +112,15 @@ class DocumentUploadApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\Document',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\Document',
                 '/documents/'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\Document', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\Document', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\Document', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\Document', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

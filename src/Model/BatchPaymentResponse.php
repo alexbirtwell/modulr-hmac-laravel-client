@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Model;
+namespace AlexBirtwell\ModulrHmacLaravel\Model;
 
 use ArrayAccess;
 
@@ -60,7 +60,7 @@ class BatchPaymentResponse implements ArrayAccess
         'batch_reference'    => 'string',
         'external_reference' => 'string',
         'id'                 => 'string',
-        'payment_responses'  => '\CrowdProperty\ModulrHmacPhpClient\Model\PaymentResponse[]',
+        'payment_responses'  => '\AlexBirtwell\ModulrHmacLaravel\Model\PaymentResponse[]',
         'status'             => 'string',
         'summary'            => 'object',
     ];
@@ -293,7 +293,7 @@ class BatchPaymentResponse implements ArrayAccess
     /**
      * Gets payment_responses.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\PaymentResponse[]
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\PaymentResponse[]
      */
     public function getPaymentResponses()
     {
@@ -303,7 +303,7 @@ class BatchPaymentResponse implements ArrayAccess
     /**
      * Sets payment_responses.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\PaymentResponse[] $payment_responses
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\PaymentResponse[] $payment_responses
      *
      * @return $this
      */
@@ -427,9 +427,9 @@ class BatchPaymentResponse implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

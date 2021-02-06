@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Model;
+namespace AlexBirtwell\ModulrHmacLaravel\Model;
 
 use ArrayAccess;
 
@@ -58,7 +58,7 @@ class CreateBeneficiaryRequest implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'default_reference'      => 'string',
-        'destination_identifier' => '\CrowdProperty\ModulrHmacPhpClient\Model\IdentifierRequest',
+        'destination_identifier' => '\AlexBirtwell\ModulrHmacLaravel\Model\IdentifierRequest',
         'external_reference'     => 'string',
         'name'                   => 'string',
     ];
@@ -236,7 +236,7 @@ class CreateBeneficiaryRequest implements ArrayAccess
     /**
      * Gets destination_identifier.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\IdentifierRequest
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\IdentifierRequest
      */
     public function getDestinationIdentifier()
     {
@@ -246,7 +246,7 @@ class CreateBeneficiaryRequest implements ArrayAccess
     /**
      * Sets destination_identifier.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\IdentifierRequest $destination_identifier
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\IdentifierRequest $destination_identifier
      *
      * @return $this
      */
@@ -380,9 +380,9 @@ class CreateBeneficiaryRequest implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

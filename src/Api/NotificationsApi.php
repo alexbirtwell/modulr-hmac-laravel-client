@@ -26,10 +26,10 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Api;
+namespace AlexBirtwell\ModulrHmacLaravel\Api;
 
-use CrowdProperty\ModulrHmacPhpClient\ApiClient;
-use CrowdProperty\ModulrHmacPhpClient\ApiException;
+use AlexBirtwell\ModulrHmacLaravel\ApiClient;
+use AlexBirtwell\ModulrHmacLaravel\ApiException;
 
 /**
  * NotificationsApi Class Doc Comment.
@@ -45,16 +45,16 @@ class NotificationsApi
     /**
      * API Client.
      *
-     * @var \CrowdProperty\ModulrHmacPhpClient\ApiClient instance of the ApiClient
+     * @var \AlexBirtwell\ModulrHmacLaravel\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\ApiClient|null $apiClient The api client to use
+     * @param \AlexBirtwell\ModulrHmacLaravel\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient = null)
+    public function __construct(\AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -66,7 +66,7 @@ class NotificationsApi
     /**
      * Get API client.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\ApiClient get the API client
+     * @return \AlexBirtwell\ModulrHmacLaravel\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -76,11 +76,11 @@ class NotificationsApi
     /**
      * Set the API client.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient set the API client
+     * @param \AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient set the API client
      *
      * @return NotificationsApi
      */
-    public function setApiClient(\CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient)
+    public function setApiClient(\AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
 
@@ -93,11 +93,11 @@ class NotificationsApi
      * Creates webhook
      *
      * @param string                                                  $cid     Id of Customer to create webhook for (required)
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\WebHookRequest $webhook Details of webhook to create (required)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\WebHookRequest $webhook Details of webhook to create (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\WebHookResponse
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\WebHookResponse
      */
     public function createWebhook($cid, $webhook)
     {
@@ -112,11 +112,11 @@ class NotificationsApi
      * Creates webhook
      *
      * @param string                                                  $cid     Id of Customer to create webhook for (required)
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\WebHookRequest $webhook Details of webhook to create (required)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\WebHookRequest $webhook Details of webhook to create (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\WebHookResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\WebHookResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createWebhookWithHttpInfo($cid, $webhook)
     {
@@ -176,15 +176,15 @@ class NotificationsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\WebHookResponse',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\WebHookResponse',
                 '/customers/{cid}/webhooks'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\WebHookResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\WebHookResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\WebHookResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\WebHookResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -201,9 +201,9 @@ class NotificationsApi
      * @param string   $cid      Id of Customer to delete WebHooks for (required)
      * @param string[] $wid_list Id(s) of WebHooks to delete, must owned by customer and active (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\MessageResponse
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\MessageResponse
      */
     public function deleteCustomerWebHooksUsingDELETE($cid, $wid_list)
     {
@@ -220,9 +220,9 @@ class NotificationsApi
      * @param string   $cid      Id of Customer to delete WebHooks for (required)
      * @param string[] $wid_list Id(s) of WebHooks to delete, must owned by customer and active (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\MessageResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function deleteCustomerWebHooksUsingDELETEWithHttpInfo($cid, $wid_list)
     {
@@ -283,19 +283,19 @@ class NotificationsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\MessageResponse',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\MessageResponse',
                 '/customers/{cid}/webhooks'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\MessageResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\MessageResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\MessageResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\MessageResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 207:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\MessageResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\MessageResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -311,9 +311,9 @@ class NotificationsApi
      *
      * @param string $cid Id of Customer to get webhooks for (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\WebHookResponse[]
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\WebHookResponse[]
      */
     public function getCustomerWebHooksUsingGET($cid)
     {
@@ -329,9 +329,9 @@ class NotificationsApi
      *
      * @param string $cid Id of Customer to get webhooks for (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\WebHookResponse[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\WebHookResponse[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getCustomerWebHooksUsingGETWithHttpInfo($cid)
     {
@@ -381,15 +381,15 @@ class NotificationsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\WebHookResponse[]',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\WebHookResponse[]',
                 '/customers/{cid}/webhooks'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\WebHookResponse[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\WebHookResponse[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\WebHookResponse[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\WebHookResponse[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -406,9 +406,9 @@ class NotificationsApi
      * @param string $id   Id of Webhook (required)
      * @param string $from Failed since Date. Needs to be urlEncoded value (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\WebHookFailureResponse[]
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\WebHookFailureResponse[]
      */
     public function getFailedWebHooksUsingGET($id, $from)
     {
@@ -425,9 +425,9 @@ class NotificationsApi
      * @param string $id   Id of Webhook (required)
      * @param string $from Failed since Date. Needs to be urlEncoded value (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\WebHookFailureResponse[], HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\WebHookFailureResponse[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getFailedWebHooksUsingGETWithHttpInfo($id, $from)
     {
@@ -485,15 +485,15 @@ class NotificationsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\WebHookFailureResponse[]',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\WebHookFailureResponse[]',
                 '/webhooks/{id}/failures'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\WebHookFailureResponse[]', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\WebHookFailureResponse[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\WebHookFailureResponse[]', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\WebHookFailureResponse[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

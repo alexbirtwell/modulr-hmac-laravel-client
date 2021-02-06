@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Model;
+namespace AlexBirtwell\ModulrHmacLaravel\Model;
 
 use ArrayAccess;
 
@@ -59,10 +59,10 @@ class Associate implements ArrayAccess
     protected static $swaggerTypes = [
         'applicant'           => 'bool',
         'date_of_birth'       => 'string',
-        'document_info'       => '\CrowdProperty\ModulrHmacPhpClient\Model\Document[]',
+        'document_info'       => '\AlexBirtwell\ModulrHmacLaravel\Model\Document[]',
         'email'               => 'string',
         'first_name'          => 'string',
-        'home_address'        => '\CrowdProperty\ModulrHmacPhpClient\Model\Address',
+        'home_address'        => '\AlexBirtwell\ModulrHmacLaravel\Model\Address',
         'id'                  => 'string',
         'last_name'           => 'string',
         'middle_name'         => 'string',
@@ -362,7 +362,7 @@ class Associate implements ArrayAccess
     /**
      * Gets document_info.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\Document[]
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\Document[]
      */
     public function getDocumentInfo()
     {
@@ -372,7 +372,7 @@ class Associate implements ArrayAccess
     /**
      * Sets document_info.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\Document[] $document_info Documents gathered during Customer Due Dilligence checks on an Associate.
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\Document[] $document_info Documents gathered during Customer Due Dilligence checks on an Associate.
      *
      * @return $this
      */
@@ -434,7 +434,7 @@ class Associate implements ArrayAccess
     /**
      * Gets home_address.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\Address
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\Address
      */
     public function getHomeAddress()
     {
@@ -444,7 +444,7 @@ class Associate implements ArrayAccess
     /**
      * Sets home_address.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\Address $home_address Home address of the Associate
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\Address $home_address Home address of the Associate
      *
      * @return $this
      */
@@ -692,9 +692,9 @@ class Associate implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

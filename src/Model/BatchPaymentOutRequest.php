@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Model;
+namespace AlexBirtwell\ModulrHmacLaravel\Model;
 
 use ArrayAccess;
 
@@ -58,7 +58,7 @@ class BatchPaymentOutRequest implements ArrayAccess
      */
     protected static $swaggerTypes = [
         'external_reference' => 'string',
-        'payments'           => '\CrowdProperty\ModulrHmacPhpClient\Model\PaymentOutRequest[]',
+        'payments'           => '\AlexBirtwell\ModulrHmacLaravel\Model\PaymentOutRequest[]',
         'strict_processing'  => 'bool',
     ];
 
@@ -213,7 +213,7 @@ class BatchPaymentOutRequest implements ArrayAccess
     /**
      * Gets payments.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\PaymentOutRequest[]
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\PaymentOutRequest[]
      */
     public function getPayments()
     {
@@ -223,7 +223,7 @@ class BatchPaymentOutRequest implements ArrayAccess
     /**
      * Sets payments.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\PaymentOutRequest[] $payments Lists of payments. Need atleast 1 and maximum of 1000
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\PaymentOutRequest[] $payments Lists of payments. Need atleast 1 and maximum of 1000
      *
      * @return $this
      */
@@ -319,9 +319,9 @@ class BatchPaymentOutRequest implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

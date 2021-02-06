@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Model;
+namespace AlexBirtwell\ModulrHmacLaravel\Model;
 
 use ArrayAccess;
 
@@ -57,14 +57,14 @@ class CreateCustomerRequest implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'associates'             => '\CrowdProperty\ModulrHmacPhpClient\Model\CreateAssociateRequest[]',
-        'document_info'          => '\CrowdProperty\ModulrHmacPhpClient\Model\Document[]',
+        'associates'             => '\AlexBirtwell\ModulrHmacLaravel\Model\CreateAssociateRequest[]',
+        'document_info'          => '\AlexBirtwell\ModulrHmacLaravel\Model\Document[]',
         'expected_monthly_spend' => 'int',
         'external_reference'     => 'string',
         'industry_code'          => 'string',
-        'registered_address'     => '\CrowdProperty\ModulrHmacPhpClient\Model\AddressRequest',
+        'registered_address'     => '\AlexBirtwell\ModulrHmacLaravel\Model\AddressRequest',
         'tcs_version'            => 'int',
-        'trading_address'        => '\CrowdProperty\ModulrHmacPhpClient\Model\AddressRequest',
+        'trading_address'        => '\AlexBirtwell\ModulrHmacLaravel\Model\AddressRequest',
         'type'                   => 'string',
         'name'                   => 'string',
         'company_reg_number'     => 'string',
@@ -326,7 +326,7 @@ class CreateCustomerRequest implements ArrayAccess
     /**
      * Gets associates.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\CreateAssociateRequest[]
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\CreateAssociateRequest[]
      */
     public function getAssociates()
     {
@@ -336,7 +336,7 @@ class CreateCustomerRequest implements ArrayAccess
     /**
      * Sets associates.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\CreateAssociateRequest[] $associates List of associates
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\CreateAssociateRequest[] $associates List of associates
      *
      * @return $this
      */
@@ -350,7 +350,7 @@ class CreateCustomerRequest implements ArrayAccess
     /**
      * Gets document_info.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\Document[]
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\Document[]
      */
     public function getDocumentInfo()
     {
@@ -360,7 +360,7 @@ class CreateCustomerRequest implements ArrayAccess
     /**
      * Sets document_info.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\Document[] $document_info information on uploaded documents
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\Document[] $document_info information on uploaded documents
      *
      * @return $this
      */
@@ -461,7 +461,7 @@ class CreateCustomerRequest implements ArrayAccess
     /**
      * Gets registered_address.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\AddressRequest
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\AddressRequest
      */
     public function getRegisteredAddress()
     {
@@ -471,7 +471,7 @@ class CreateCustomerRequest implements ArrayAccess
     /**
      * Sets registered_address.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\AddressRequest $registered_address Registered address
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\AddressRequest $registered_address Registered address
      *
      * @return $this
      */
@@ -516,7 +516,7 @@ class CreateCustomerRequest implements ArrayAccess
     /**
      * Gets trading_address.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\AddressRequest
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\AddressRequest
      */
     public function getTradingAddress()
     {
@@ -526,7 +526,7 @@ class CreateCustomerRequest implements ArrayAccess
     /**
      * Sets trading_address.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\AddressRequest $trading_address Trading address. Mandatory for all types except for 'INDIVIDUAL'
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\AddressRequest $trading_address Trading address. Mandatory for all types except for 'INDIVIDUAL'
      *
      * @return $this
      */
@@ -688,9 +688,9 @@ class CreateCustomerRequest implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

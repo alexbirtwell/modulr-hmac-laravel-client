@@ -26,10 +26,10 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Api;
+namespace AlexBirtwell\ModulrHmacLaravel\Api;
 
-use CrowdProperty\ModulrHmacPhpClient\ApiClient;
-use CrowdProperty\ModulrHmacPhpClient\ApiException;
+use AlexBirtwell\ModulrHmacLaravel\ApiClient;
+use AlexBirtwell\ModulrHmacLaravel\ApiException;
 
 /**
  * RuleApi Class Doc Comment.
@@ -45,16 +45,16 @@ class RuleApi
     /**
      * API Client.
      *
-     * @var \CrowdProperty\ModulrHmacPhpClient\ApiClient instance of the ApiClient
+     * @var \AlexBirtwell\ModulrHmacLaravel\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\ApiClient|null $apiClient The api client to use
+     * @param \AlexBirtwell\ModulrHmacLaravel\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient = null)
+    public function __construct(\AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -66,7 +66,7 @@ class RuleApi
     /**
      * Get API client.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\ApiClient get the API client
+     * @return \AlexBirtwell\ModulrHmacLaravel\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -76,11 +76,11 @@ class RuleApi
     /**
      * Set the API client.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient set the API client
+     * @param \AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient set the API client
      *
      * @return RuleApi
      */
-    public function setApiClient(\CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient)
+    public function setApiClient(\AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
 
@@ -92,11 +92,11 @@ class RuleApi
      *
      * Create Rule
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\CreateRuleRequest $create_rule_request create rule request (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\CreateRuleRequest $create_rule_request create rule request (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse
      */
     public function createRuleUsingPOST($create_rule_request = null)
     {
@@ -110,11 +110,11 @@ class RuleApi
      *
      * Create Rule
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\CreateRuleRequest $create_rule_request create rule request (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\CreateRuleRequest $create_rule_request create rule request (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function createRuleUsingPOSTWithHttpInfo($create_rule_request = null)
     {
@@ -158,15 +158,15 @@ class RuleApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse',
                 '/rules'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -183,9 +183,9 @@ class RuleApi
      * @param string $aid   Id of Account to get Rule of (required)
      * @param string $rtype rtype (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse
      */
     public function getRuleUsingGET($aid, $rtype)
     {
@@ -202,9 +202,9 @@ class RuleApi
      * @param string $aid   Id of Account to get Rule of (required)
      * @param string $rtype rtype (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRuleUsingGETWithHttpInfo($aid, $rtype)
     {
@@ -266,15 +266,15 @@ class RuleApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse',
                 '/accounts/{aid}/rules/{rtype}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -293,9 +293,9 @@ class RuleApi
      * @param int    $size  Size of Page to fetch (optional, default to 20)
      * @param string $rtype Filter to a specific RuleType (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\PageResponseRuleResponse_
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\PageResponseRuleResponse_
      */
     public function getRulesUsingGET($aid, $page = null, $size = null, $rtype = null)
     {
@@ -314,9 +314,9 @@ class RuleApi
      * @param int    $size  Size of Page to fetch (optional, default to 20)
      * @param string $rtype Filter to a specific RuleType (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\PageResponseRuleResponse_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\PageResponseRuleResponse_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getRulesUsingGETWithHttpInfo($aid, $page = null, $size = null, $rtype = null)
     {
@@ -378,15 +378,15 @@ class RuleApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponseRuleResponse_',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponseRuleResponse_',
                 '/accounts/{aid}/rules'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponseRuleResponse_', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponseRuleResponse_', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponseRuleResponse_', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponseRuleResponse_', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -401,11 +401,11 @@ class RuleApi
      * Edit Rule
      *
      * @param string                                                     $rid               Id of Rule to be edited (required)
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\CreateRuleRequest $edit_rule_request edit rule request (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\CreateRuleRequest $edit_rule_request edit rule request (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse
      */
     public function modifyRuleUsingPUT($rid, $edit_rule_request = null)
     {
@@ -420,11 +420,11 @@ class RuleApi
      * Edit Rule
      *
      * @param string                                                     $rid               Id of Rule to be edited (required)
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\CreateRuleRequest $edit_rule_request edit rule request (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\CreateRuleRequest $edit_rule_request edit rule request (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function modifyRuleUsingPUTWithHttpInfo($rid, $edit_rule_request = null)
     {
@@ -480,15 +480,15 @@ class RuleApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse',
                 '/rules/{rid}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -504,7 +504,7 @@ class RuleApi
      *
      * @param string[] $r_ids Id(s) of Rules to delete (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
      * @return object
      */
@@ -522,7 +522,7 @@ class RuleApi
      *
      * @param string[] $r_ids Id(s) of Rules to delete (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
      * @return array of object, HTTP status code, HTTP response headers (array of strings)
      */
@@ -585,7 +585,7 @@ class RuleApi
                     $e->setResponseObject($data);
                     break;
                 case 207:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\MessageResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\MessageResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

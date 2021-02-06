@@ -26,10 +26,10 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Api;
+namespace AlexBirtwell\ModulrHmacLaravel\Api;
 
-use CrowdProperty\ModulrHmacPhpClient\ApiClient;
-use CrowdProperty\ModulrHmacPhpClient\ApiException;
+use AlexBirtwell\ModulrHmacLaravel\ApiClient;
+use AlexBirtwell\ModulrHmacLaravel\ApiException;
 
 /**
  * CustomersApi Class Doc Comment.
@@ -45,16 +45,16 @@ class CustomersApi
     /**
      * API Client.
      *
-     * @var \CrowdProperty\ModulrHmacPhpClient\ApiClient instance of the ApiClient
+     * @var \AlexBirtwell\ModulrHmacLaravel\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\ApiClient|null $apiClient The api client to use
+     * @param \AlexBirtwell\ModulrHmacLaravel\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient = null)
+    public function __construct(\AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -66,7 +66,7 @@ class CustomersApi
     /**
      * Get API client.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\ApiClient get the API client
+     * @return \AlexBirtwell\ModulrHmacLaravel\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -76,11 +76,11 @@ class CustomersApi
     /**
      * Set the API client.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient set the API client
+     * @param \AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient set the API client
      *
      * @return CustomersApi
      */
-    public function setApiClient(\CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient)
+    public function setApiClient(\AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
 
@@ -92,11 +92,11 @@ class CustomersApi
      *
      * Create Customer
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\CreateCustomerRequest $customer_request Details of Customer to create (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\CreateCustomerRequest $customer_request Details of Customer to create (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\Customer
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\Customer
      */
     public function createCustomer($customer_request = null)
     {
@@ -110,11 +110,11 @@ class CustomersApi
      *
      * Create Customer
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\CreateCustomerRequest $customer_request Details of Customer to create (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\CreateCustomerRequest $customer_request Details of Customer to create (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
     public function createCustomerWithHttpInfo($customer_request = null)
     {
@@ -158,15 +158,15 @@ class CustomersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\Customer',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\Customer',
                 '/customers'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\Customer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\Customer', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -181,11 +181,11 @@ class CustomersApi
      * Edit customer
      *
      * @param string                                                         $cid              Id of Customer to be edited (required)
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\UpdateCustomerRequest $customer_details Details of Customer to edit (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\UpdateCustomerRequest $customer_details Details of Customer to edit (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\Customer
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\Customer
      */
     public function editCustomerUsingPUT($cid, $customer_details = null)
     {
@@ -200,11 +200,11 @@ class CustomersApi
      * Edit customer
      *
      * @param string                                                         $cid              Id of Customer to be edited (required)
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\UpdateCustomerRequest $customer_details Details of Customer to edit (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\UpdateCustomerRequest $customer_details Details of Customer to edit (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
     public function editCustomerUsingPUTWithHttpInfo($cid, $customer_details = null)
     {
@@ -260,15 +260,15 @@ class CustomersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\Customer',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\Customer',
                 '/customers/{cid}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\Customer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\Customer', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -284,9 +284,9 @@ class CustomersApi
      *
      * @param string $cid cid (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\Customer
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\Customer
      */
     public function getCustomerUsingGET($cid)
     {
@@ -302,9 +302,9 @@ class CustomersApi
      *
      * @param string $cid cid (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\Customer, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\Customer, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCustomerUsingGETWithHttpInfo($cid)
     {
@@ -354,15 +354,15 @@ class CustomersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\Customer',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\Customer',
                 '/customers/{cid}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\Customer', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\Customer', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\Customer', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\Customer', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -386,9 +386,9 @@ class CustomersApi
      * @param string $sort_field          Sort by field (optional)
      * @param string $sort_order          Sorting order (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\PageResponseCustomer_
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\PageResponseCustomer_
      */
     public function getCustomersUsingGET($q = null, $type = null, $verification_status = null, $from_created_date = null, $to_created_date = null, $page = null, $size = null, $sort_field = null, $sort_order = null)
     {
@@ -412,9 +412,9 @@ class CustomersApi
      * @param string $sort_field          Sort by field (optional)
      * @param string $sort_order          Sorting order (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\PageResponseCustomer_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\PageResponseCustomer_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getCustomersUsingGETWithHttpInfo($q = null, $type = null, $verification_status = null, $from_created_date = null, $to_created_date = null, $page = null, $size = null, $sort_field = null, $sort_order = null)
     {
@@ -488,15 +488,15 @@ class CustomersApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponseCustomer_',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponseCustomer_',
                 '/customers'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponseCustomer_', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponseCustomer_', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponseCustomer_', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponseCustomer_', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

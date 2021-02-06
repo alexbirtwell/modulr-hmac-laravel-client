@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient;
+namespace AlexBirtwell\ModulrHmacLaravel;
 
 /**
  * ApiClient Class Doc Comment.
@@ -67,7 +67,7 @@ class ApiClient
      *
      * @param Configuration $config config for this ApiClient
      */
-    public function __construct(\CrowdProperty\ModulrHmacPhpClient\Configuration $config = null)
+    public function __construct(\AlexBirtwell\ModulrHmacLaravel\Configuration $config = null)
     {
         if ($config === null) {
             $config = Configuration::getDefaultConfiguration();
@@ -133,7 +133,7 @@ class ApiClient
      * @param string $responseType expected response type of the endpoint
      * @param string $endpointPath path to method endpoint before expanding parameters
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on a non 2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on a non 2xx response
      *
      * @return mixed
      */

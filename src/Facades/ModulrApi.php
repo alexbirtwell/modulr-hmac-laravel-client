@@ -6,7 +6,7 @@
  * Time: 11:27.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Facades;
+namespace AlexBirtwell\ModulrHmacLaravel\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -19,6 +19,6 @@ class ModulrApi extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'CrowdProperty\ModulrHmacPhpClient\ModulrApi';
+        return 'AlexBirtwell\ModulrHmacLaravel\ModulrApi';
     }
 }

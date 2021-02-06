@@ -1,8 +1,8 @@
 <?php
 
-namespace CrowdProperty\ModulrHmacPhpClient;
+namespace AlexBirtwell\ModulrHmacLaravel;
 
-use CrowdProperty\ModulrHmacPhpClient\Exception\ConfigException;
+use AlexBirtwell\ModulrHmacLaravel\Exception\ConfigException;
 use Illuminate\Support\ServiceProvider;
 
 class ModulrServiceProvider extends ServiceProvider

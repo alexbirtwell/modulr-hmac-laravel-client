@@ -26,10 +26,10 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Api;
+namespace AlexBirtwell\ModulrHmacLaravel\Api;
 
-use CrowdProperty\ModulrHmacPhpClient\ApiClient;
-use CrowdProperty\ModulrHmacPhpClient\ApiException;
+use AlexBirtwell\ModulrHmacLaravel\ApiClient;
+use AlexBirtwell\ModulrHmacLaravel\ApiException;
 
 /**
  * PaymentsApi Class Doc Comment.
@@ -45,16 +45,16 @@ class PaymentsApi
     /**
      * API Client.
      *
-     * @var \CrowdProperty\ModulrHmacPhpClient\ApiClient instance of the ApiClient
+     * @var \AlexBirtwell\ModulrHmacLaravel\ApiClient instance of the ApiClient
      */
     protected $apiClient;
 
     /**
      * Constructor.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\ApiClient|null $apiClient The api client to use
+     * @param \AlexBirtwell\ModulrHmacLaravel\ApiClient|null $apiClient The api client to use
      */
-    public function __construct(\CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient = null)
+    public function __construct(\AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient = null)
     {
         if ($apiClient === null) {
             $apiClient = new ApiClient();
@@ -66,7 +66,7 @@ class PaymentsApi
     /**
      * Get API client.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\ApiClient get the API client
+     * @return \AlexBirtwell\ModulrHmacLaravel\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -76,11 +76,11 @@ class PaymentsApi
     /**
      * Set the API client.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient set the API client
+     * @param \AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient set the API client
      *
      * @return PaymentsApi
      */
-    public function setApiClient(\CrowdProperty\ModulrHmacPhpClient\ApiClient $apiClient)
+    public function setApiClient(\AlexBirtwell\ModulrHmacLaravel\ApiClient $apiClient)
     {
         $this->apiClient = $apiClient;
 
@@ -94,9 +94,9 @@ class PaymentsApi
      *
      * @param string $id id given when batch request was made (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\BatchPaymentResponse
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\BatchPaymentResponse
      */
     public function getBatchDetails($id)
     {
@@ -112,9 +112,9 @@ class PaymentsApi
      *
      * @param string $id id given when batch request was made (required)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\BatchPaymentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\BatchPaymentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function getBatchDetailsWithHttpInfo($id)
     {
@@ -164,15 +164,15 @@ class PaymentsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\BatchPaymentResponse',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\BatchPaymentResponse',
                 '/batchpayments/{id}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\BatchPaymentResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\BatchPaymentResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\BatchPaymentResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\BatchPaymentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -195,9 +195,9 @@ class PaymentsApi
      * @param int      $page               Page to fetch (0 indexed) (optional)
      * @param int      $size               Size of Page to fetch (optional, default to 20)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\PageResponsePaymentResponse_
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\PageResponsePaymentResponse_
      */
     public function getPaymentsUsingGET($id = null, $from_created_date = null, $to_created_date = null, $source_account_id = null, $external_reference = null, $status = null, $page = null, $size = null)
     {
@@ -220,9 +220,9 @@ class PaymentsApi
      * @param int      $page               Page to fetch (0 indexed) (optional)
      * @param int      $size               Size of Page to fetch (optional, default to 20)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\PageResponsePaymentResponse_, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\PageResponsePaymentResponse_, HTTP status code, HTTP response headers (array of strings)
      */
     public function getPaymentsUsingGETWithHttpInfo($id = null, $from_created_date = null, $to_created_date = null, $source_account_id = null, $external_reference = null, $status = null, $page = null, $size = null)
     {
@@ -295,15 +295,15 @@ class PaymentsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponsePaymentResponse_',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponsePaymentResponse_',
                 '/payments'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponsePaymentResponse_', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponsePaymentResponse_', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\PageResponsePaymentResponse_', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\PageResponsePaymentResponse_', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -317,11 +317,11 @@ class PaymentsApi
      *
      * Submit payment request
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\PaymentOutRequest $payment_request Details of Payment request (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\PaymentOutRequest $payment_request Details of Payment request (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\PaymentResponse
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\PaymentResponse
      */
     public function sendPaymentUsingPOST($payment_request = null)
     {
@@ -335,11 +335,11 @@ class PaymentsApi
      *
      * Submit payment request
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\PaymentOutRequest $payment_request Details of Payment request (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\PaymentOutRequest $payment_request Details of Payment request (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\PaymentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\PaymentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function sendPaymentUsingPOSTWithHttpInfo($payment_request = null)
     {
@@ -383,15 +383,15 @@ class PaymentsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\PaymentResponse',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\PaymentResponse',
                 '/payments'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\PaymentResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\PaymentResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\PaymentResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\PaymentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -405,11 +405,11 @@ class PaymentsApi
      *
      * Submit batch payment requests
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\BatchPaymentOutRequest $batch_payment_request Details of Batch request (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\BatchPaymentOutRequest $batch_payment_request Details of Batch request (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\BatchPaymentResponse
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\BatchPaymentResponse
      */
     public function submitBatchPaymentsUsingPOST($batch_payment_request = null)
     {
@@ -423,11 +423,11 @@ class PaymentsApi
      *
      * Submit batch payment requests
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\BatchPaymentOutRequest $batch_payment_request Details of Batch request (optional)
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\BatchPaymentOutRequest $batch_payment_request Details of Batch request (optional)
      *
-     * @throws \CrowdProperty\ModulrHmacPhpClient\ApiException on non-2xx response
+     * @throws \AlexBirtwell\ModulrHmacLaravel\ApiException on non-2xx response
      *
-     * @return array of \CrowdProperty\ModulrHmacPhpClient\Model\BatchPaymentResponse, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AlexBirtwell\ModulrHmacLaravel\Model\BatchPaymentResponse, HTTP status code, HTTP response headers (array of strings)
      */
     public function submitBatchPaymentsUsingPOSTWithHttpInfo($batch_payment_request = null)
     {
@@ -471,15 +471,15 @@ class PaymentsApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\CrowdProperty\ModulrHmacPhpClient\Model\BatchPaymentResponse',
+                '\AlexBirtwell\ModulrHmacLaravel\Model\BatchPaymentResponse',
                 '/batchpayments'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\CrowdProperty\ModulrHmacPhpClient\Model\BatchPaymentResponse', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\AlexBirtwell\ModulrHmacLaravel\Model\BatchPaymentResponse', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 201:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\CrowdProperty\ModulrHmacPhpClient\Model\BatchPaymentResponse', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\AlexBirtwell\ModulrHmacLaravel\Model\BatchPaymentResponse', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

@@ -16,7 +16,7 @@ After updating composer, add the service provider to the providers array in `con
 ```php
 'providers' => [
     ...
-    CrowdProperty\ModulrHmacPhpClient\ModulrServiceProvider::class,
+    AlexBirtwell\ModulrHmacLaravel\ModulrServiceProvider::class,
     ...
 ];
 ```
@@ -26,7 +26,7 @@ After updating composer, add the service provider to the providers array in `con
 Publish the package config to your application with the following artisan commands:
 
 ```sh
-php artisan vendor:publish --provider="CrowdProperty\ModulrHmacPhpClient\ModulrServiceProvider" 
+php artisan vendor:publish --provider="AlexBirtwell\ModulrHmacLaravel\ModulrServiceProvider" 
 ```
 
 ## Configuration
@@ -51,10 +51,10 @@ Available config options are:
 <?php
 namespace App\Http\Controllers;
 
-use CrowdProperty\ModulrHmacPhpClient\Facades\ModulrApi;
-use CrowdProperty\ModulrHmacPhpClient\Model\Address;
-use CrowdProperty\ModulrHmacPhpClient\Model\Associate;
-use CrowdProperty\ModulrHmacPhpClient\Model\Customer;
+use AlexBirtwell\ModulrHmacLaravel\Facades\ModulrApi;
+use AlexBirtwell\ModulrHmacLaravel\Model\Address;
+use AlexBirtwell\ModulrHmacLaravel\Model\Associate;
+use AlexBirtwell\ModulrHmacLaravel\Model\Customer;
 
 class DemoController extends BaseController
 {

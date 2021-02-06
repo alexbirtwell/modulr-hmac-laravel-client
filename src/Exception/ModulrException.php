@@ -1,6 +1,6 @@
 <?php
 
-namespace CrowdProperty\ModulrHmacPhpClient\Exception;
+namespace AlexBirtwell\ModulrHmacLaravel\Exception;
 
 interface ModulrException
 {

@@ -3,7 +3,7 @@
 namespace Tests\Unit;
 
 use Carbon\Carbon;
-use CrowdProperty\ModulrHmacPhpClient\ModulrApi;
+use AlexBirtwell\ModulrHmacLaravel\ModulrApi;
 use Tests\TestCase;
 
 class ModulrApiTest extends TestCase

@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Model;
+namespace AlexBirtwell\ModulrHmacLaravel\Model;
 
 use ArrayAccess;
 
@@ -61,7 +61,7 @@ class ModelAndView implements ArrayAccess
         'model'     => 'object',
         'model_map' => 'map[string,object]',
         'reference' => 'bool',
-        'view'      => '\CrowdProperty\ModulrHmacPhpClient\Model\View',
+        'view'      => '\AlexBirtwell\ModulrHmacLaravel\Model\View',
         'view_name' => 'string',
     ];
 
@@ -271,7 +271,7 @@ class ModelAndView implements ArrayAccess
     /**
      * Gets view.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\View
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\View
      */
     public function getView()
     {
@@ -281,7 +281,7 @@ class ModelAndView implements ArrayAccess
     /**
      * Sets view.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\View $view
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\View $view
      *
      * @return $this
      */
@@ -377,9 +377,9 @@ class ModelAndView implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace CrowdProperty\ModulrHmacPhpClient\Http\Middleware;
+namespace AlexBirtwell\ModulrHmacLaravel\Http\Middleware;
 
 use Carbon\Carbon;
 use Closure;
-use CrowdProperty\ModulrHmacPhpClient\ModulrApi;
+use AlexBirtwell\ModulrHmacLaravel\ModulrApi;
 use Illuminate\Support\Facades\Storage;
 use Request;
 use Monolog\Logger;

@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Model;
+namespace AlexBirtwell\ModulrHmacLaravel\Model;
 
 use ArrayAccess;
 
@@ -60,7 +60,7 @@ class InboundPaymentRequest implements ArrayAccess
         'account_id'             => 'string',
         'amount'                 => 'double',
         'number_of_transactions' => 'int',
-        'payer_detail'           => '\CrowdProperty\ModulrHmacPhpClient\Model\PartyDetail',
+        'payer_detail'           => '\AlexBirtwell\ModulrHmacLaravel\Model\PartyDetail',
         'transaction_date'       => 'string',
         'type'                   => 'string',
         'description'            => 'string',
@@ -359,7 +359,7 @@ class InboundPaymentRequest implements ArrayAccess
     /**
      * Gets payer_detail.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\PartyDetail
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\PartyDetail
      */
     public function getPayerDetail()
     {
@@ -369,7 +369,7 @@ class InboundPaymentRequest implements ArrayAccess
     /**
      * Sets payer_detail.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\PartyDetail $payer_detail Payer details. Mandatory
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\PartyDetail $payer_detail Payer details. Mandatory
      *
      * @return $this
      */
@@ -521,9 +521,9 @@ class InboundPaymentRequest implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this));
     }
 }

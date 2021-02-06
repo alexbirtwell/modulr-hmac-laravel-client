@@ -1,18 +1,18 @@
 <?php
 
-namespace CrowdProperty\ModulrHmacPhpClient;
+namespace AlexBirtwell\ModulrHmacLaravel;
 
 use Carbon\Carbon;
-use CrowdProperty\ModulrHmacPhpClient\Api\AccountsApi;
-use CrowdProperty\ModulrHmacPhpClient\Api\BeneficiariesApi;
-use CrowdProperty\ModulrHmacPhpClient\Api\CustomersApi;
-use CrowdProperty\ModulrHmacPhpClient\Api\DocumentUploadApi;
-use CrowdProperty\ModulrHmacPhpClient\Api\InboundpaymentsApi;
-use CrowdProperty\ModulrHmacPhpClient\Api\NotificationsApi;
-use CrowdProperty\ModulrHmacPhpClient\Api\PaymentsApi;
-use CrowdProperty\ModulrHmacPhpClient\Api\RuleApi;
-use CrowdProperty\ModulrHmacPhpClient\Api\TransactionsApi;
-use CrowdProperty\ModulrHmacPhpClient\Exception\ConfigException;
+use AlexBirtwell\ModulrHmacLaravel\Api\AccountsApi;
+use AlexBirtwell\ModulrHmacLaravel\Api\BeneficiariesApi;
+use AlexBirtwell\ModulrHmacLaravel\Api\CustomersApi;
+use AlexBirtwell\ModulrHmacLaravel\Api\DocumentUploadApi;
+use AlexBirtwell\ModulrHmacLaravel\Api\InboundpaymentsApi;
+use AlexBirtwell\ModulrHmacLaravel\Api\NotificationsApi;
+use AlexBirtwell\ModulrHmacLaravel\Api\PaymentsApi;
+use AlexBirtwell\ModulrHmacLaravel\Api\RuleApi;
+use AlexBirtwell\ModulrHmacLaravel\Api\TransactionsApi;
+use AlexBirtwell\ModulrHmacLaravel\Exception\ConfigException;
 
 /**
  * Class ModulrApi.

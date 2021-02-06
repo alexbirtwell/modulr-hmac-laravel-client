@@ -5,7 +5,7 @@ namespace Tests\Unit\Http\Middleware;
 use Carbon\Carbon;
 use Tests\TestCase;
 use Illuminate\Http\Request;
-use CrowdProperty\ModulrHmacPhpClient\Http\Middleware\VerifyModulrHmac;
+use AlexBirtwell\ModulrHmacLaravel\Http\Middleware\VerifyModulrHmac;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class VerifyModulrHmacTest extends TestCase

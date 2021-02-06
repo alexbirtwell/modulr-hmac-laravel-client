@@ -26,7 +26,7 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient;
+namespace AlexBirtwell\ModulrHmacLaravel;
 
 use Exception;
 

@@ -27,7 +27,7 @@
  * Do not edit the class manually.
  */
 
-namespace CrowdProperty\ModulrHmacPhpClient\Model;
+namespace AlexBirtwell\ModulrHmacLaravel\Model;
 
 use ArrayAccess;
 
@@ -57,7 +57,7 @@ class PageResponseRuleResponse_ implements ArrayAccess
      * @var string[]
      */
     protected static $swaggerTypes = [
-        'content'     => '\CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse[]',
+        'content'     => '\AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse[]',
         'page'        => 'int',
         'size'        => 'int',
         'total_pages' => 'int',
@@ -202,7 +202,7 @@ class PageResponseRuleResponse_ implements ArrayAccess
     /**
      * Gets content.
      *
-     * @return \CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse[]
+     * @return \AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse[]
      */
     public function getContent()
     {
@@ -212,7 +212,7 @@ class PageResponseRuleResponse_ implements ArrayAccess
     /**
      * Sets content.
      *
-     * @param \CrowdProperty\ModulrHmacPhpClient\Model\RuleResponse[] $content List of responses on the current page
+     * @param \AlexBirtwell\ModulrHmacLaravel\Model\RuleResponse[] $content List of responses on the current page
      *
      * @return $this
      */
@@ -380,9 +380,9 @@ class PageResponseRuleResponse_ implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) { // use JSON pretty print
-            return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
+            return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         }
 
-        return json_encode(\CrowdProperty\ModulrHmacPhpClient\ObjectSerializer::sanitizeForSerialization($this));
+        return json_encode(\AlexBirtwell\ModulrHmacLaravel\ObjectSerializer::sanitizeForSerialization($this));
     }
 }
