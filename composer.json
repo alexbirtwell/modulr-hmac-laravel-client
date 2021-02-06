@@ -3,8 +3,7 @@
   "minimum-stability": "stable",
   "license": "GPL-3.0",
   "require": {
-    "php": ">=7.3",
-    "laravel/framework": "^5"
+    "php": ">=7.3"
   },
   "autoload": {
     "psr-4" : {
