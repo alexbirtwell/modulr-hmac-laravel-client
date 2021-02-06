@@ -1,5 +1,5 @@
 {
-  "name": "alexbirtwell/modulr-hmac-php-laravel",
+  "name": "alexbirtwell/modulr-hmac-laravel",
   "minimum-stability": "stable",
   "license": "GPL-3.0",
   "require": {
