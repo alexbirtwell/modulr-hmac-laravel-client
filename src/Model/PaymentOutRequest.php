@@ -168,7 +168,7 @@ class PaymentOutRequest implements ArrayAccess
             $invalid_properties[] = "invalid value for 'external_reference', the character length must be smaller than or equal to 50.";
         }
 
-        if (!is_null($this->container['external_reference']) && !preg_match('/[\\w-\\s]*_/', $this->container['external_reference'])) {
+        if (!is_null($this->container['external_reference']) && !ctype_alnum($this->container['external_reference'])) {
             $invalid_properties[] = "invalid value for 'external_reference', must be conform to the pattern /[\\w-\\s]*_/.";
         }
 
@@ -199,7 +199,7 @@ class PaymentOutRequest implements ArrayAccess
         if (strlen($this->container['external_reference']) > 50) {
             return false;
         }
-        if (!preg_match('/[\\w-\\s]*_/', $this->container['external_reference'])) {
+        if (!ctype_alnum($this->container['external_reference'])) {
             return false;
         }
         if ($this->container['source_account_id'] === null) {
@@ -286,7 +286,7 @@ class PaymentOutRequest implements ArrayAccess
         if (!is_null($external_reference) && (strlen($external_reference) > 50)) {
             throw new \InvalidArgumentException('invalid length for $external_reference when calling PaymentOutRequest., must be smaller than or equal to 50.');
         }
-        if (!is_null($external_reference) && (!preg_match('/[\\w-\\s]*_/', $external_reference))) {
+        if (!is_null($external_reference) && (!ctype_alnum($external_reference))) {
             throw new \InvalidArgumentException("invalid value for $external_reference when calling PaymentOutRequest., must conform to the pattern /[\\w-\\s]*_/.");
         }
 
@@ -315,6 +315,20 @@ class PaymentOutRequest implements ArrayAccess
     public function setReference($reference)
     {
         $this->container['reference'] = $reference;
+
+        return $this;
+    }
+
+    /**
+     * Sets furture payment date
+     *
+     * @param string $reference Reference to be used for the Payment. This will appear on the Account statement/the recipient's bank account. Min 6 to max 18 characters. Can contain alphanumeric, '-', '.', '&', '/' and space.
+     *
+     * @return $this
+     */
+    public function setPaymentDate($reference)
+    {
+        $this->container['paymentDate'] = $reference;
 
         return $this;
     }

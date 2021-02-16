@@ -179,7 +179,7 @@ class Destination implements ArrayAccess
             $invalid_properties[] = "invalid value for 'name', the character length must be smaller than or equal to 100.";
         }
 
-        if (!is_null($this->container['name']) && !preg_match("/^(.*?[A-Za-z0-9]){1,}['\\.\\-/&\\s]*_/", $this->container['name'])) {
+        if (!is_null($this->container['name']) && !preg_match('/^[a-z0-9 .\-]+$/i', $this->container['name'])) {
             $invalid_properties[] = "invalid value for 'name', must be conform to the pattern /^(.*?[A-Za-z0-9]){1,}['\\.\\-/&\\s]*_/.";
         }
 
@@ -212,7 +212,7 @@ class Destination implements ArrayAccess
         if (strlen($this->container['name']) > 100) {
             return false;
         }
-        if (!preg_match("/^(.*?[A-Za-z0-9]){1,}['\\.\\-/&\\s]*_/", $this->container['name'])) {
+        if (!preg_match('/^[a-z0-9 .\-]+$/i', $this->container['name'])) {
             return false;
         }
         if (!preg_match('/^[0-9]{6}$/', $this->container['sort_code'])) {
@@ -303,8 +303,8 @@ class Destination implements ArrayAccess
         if (!is_null($name) && (strlen($name) > 100)) {
             throw new \InvalidArgumentException('invalid length for $name when calling Destination., must be smaller than or equal to 100.');
         }
-        if (!is_null($name) && (!preg_match("/^(.*?[A-Za-z0-9]){1,}['\\.\\-/&\\s]*_/", $name))) {
-            throw new \InvalidArgumentException("invalid value for $name when calling Destination., must conform to the pattern /^(.*?[A-Za-z0-9]){1,}['\\.\\-/&\\s]*_/.");
+        if (!is_null($name) && (!preg_match('/^[a-z0-9 .\-]+$/i', $name))) {
+            throw new \InvalidArgumentException("invalid value for $name when calling Destination., must conform to the pattern '/^[a-z0-9 .\-]+$/i'.");
         }
 
         $this->container['name'] = $name;
