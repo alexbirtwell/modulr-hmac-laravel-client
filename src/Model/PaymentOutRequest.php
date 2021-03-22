@@ -62,6 +62,7 @@ class PaymentOutRequest implements ArrayAccess
         'external_reference' => 'string',
         'reference'          => 'string',
         'source_account_id'  => 'string',
+        'payment_date' => 'string',
     ];
 
     public static function swaggerTypes()
@@ -80,6 +81,7 @@ class PaymentOutRequest implements ArrayAccess
         'external_reference' => 'externalReference',
         'reference'          => 'reference',
         'source_account_id'  => 'sourceAccountId',
+        'payment_date' => 'paymentDate',
     ];
 
     /**
@@ -93,6 +95,7 @@ class PaymentOutRequest implements ArrayAccess
         'external_reference' => 'setExternalReference',
         'reference'          => 'setReference',
         'source_account_id'  => 'setSourceAccountId',
+        'payment_date'  => 'setPaymentDate',
     ];
 
     /**
@@ -106,6 +109,7 @@ class PaymentOutRequest implements ArrayAccess
         'external_reference' => 'getExternalReference',
         'reference'          => 'getReference',
         'source_account_id'  => 'getSourceAccountId',
+        'payment_date'=> 'getPaymentDate',
     ];
 
     public static function attributeMap()
@@ -142,6 +146,7 @@ class PaymentOutRequest implements ArrayAccess
         $this->container['external_reference'] = isset($data['external_reference']) ? $data['external_reference'] : null;
         $this->container['reference'] = isset($data['reference']) ? $data['reference'] : null;
         $this->container['source_account_id'] = isset($data['source_account_id']) ? $data['source_account_id'] : null;
+        $this->container['payment_date'] = isset($data['payment_date']) ? $data['payment_date'] : null;
     }
 
     /**
@@ -328,9 +333,19 @@ class PaymentOutRequest implements ArrayAccess
      */
     public function setPaymentDate($reference)
     {
-        $this->container['paymentDate'] = $reference;
+        $this->container['payment_date'] = $reference;
 
         return $this;
+    }
+
+     /**
+     * Gets payment_date.
+     *
+     * @return string
+     */
+    public function getPaymentDate()
+    {
+        return $this->container['payment_date'];
     }
 
     /**
