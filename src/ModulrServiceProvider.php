@@ -3,6 +3,7 @@
 namespace AlexBirtwell\ModulrHmacLaravel;
 
 use AlexBirtwell\ModulrHmacLaravel\Exception\ConfigException;
+use App\Builders\SiteBuilder;
 use Illuminate\Support\ServiceProvider;
 
 class ModulrServiceProvider extends ServiceProvider
