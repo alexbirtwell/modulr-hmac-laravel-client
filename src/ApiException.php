@@ -97,6 +97,20 @@ class ApiException extends Exception
         return $this->responseBody;
     }
 
+    public function getFriendlyErrorMessage()
+    {
+        if (!isset($this->responseBody[0])){
+            return $this->message;
+        }
+        $error = $this->responseBody[0];
+        $field = $error->field;
+        $field = str_replace(["[", "]"], ["",""], $field);
+        $field = str_replace("payments.",  "payment line ", $field);
+
+        return $field .  " - " . $error->message;
+
+    }
+
     /**
      * Sets the deseralized response object (during deserialization).
      *
