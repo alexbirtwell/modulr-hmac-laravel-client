@@ -104,7 +104,7 @@ class ApiException extends Exception
         }
         $error = $this->responseBody[0];
         $field = $error->field;
-        $field = str_replace(["[", "]"], ["",""], $field);
+        $field = str_replace(["[", "]"], ["", ""], $field);
         $field = str_replace("payments.",  "payment line ", $field);
 
         return $field .  " - " . $error->message;
