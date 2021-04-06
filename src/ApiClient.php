@@ -268,12 +268,12 @@ class ApiClient
                 $data = $http_body;
             }
         } else {
+
             $data = json_decode($http_body);
+            dd($data);
             if (json_last_error() > 0) { // if response is a string
                 $data = $http_body;
             }
-
-            Log::info($http_body);
 
             throw new ApiException(
                 '['.$response_info['http_code']."] Error connecting to the API ($url)",
