@@ -272,9 +272,9 @@ class ApiClient
             if (json_last_error() > 0) { // if response is a string
                 $data = $http_body;
             }
-            if (config('modulr.debug')) {
-                Log::info($http_body);
-            }
+
+            Log::info($http_body);
+
             throw new ApiException(
                 '['.$response_info['http_code']."] Error connecting to the API ($url)",
                 $response_info['http_code'],
