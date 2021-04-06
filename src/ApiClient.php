@@ -270,7 +270,7 @@ class ApiClient
         } else {
 
             $data = json_decode($http_body);
-            dd($data);
+
             if (json_last_error() > 0) { // if response is a string
                 $data = $http_body;
             }
