@@ -99,10 +99,11 @@ class ApiException extends Exception
 
     public function getFriendlyErrorMessage()
     {
-        if (!isset($this->responseBody[0])){
-            return $this->message;
+        if (!isset($this->getResponseBody()[0])){
+            return $this->getMessage();
         }
-        $error = $this->responseBody[0];
+
+        $error = $this->getResponseBody()[0];
         $field = $error->field;
         $field = str_replace(["[", "]"], ["", ""], $field);
         $field = str_replace("payments.",  "payment line ", $field);
