@@ -334,7 +334,6 @@ class PaymentOutRequest implements ArrayAccess
     public function setPaymentDate($reference)
     {
         $this->container['payment_date'] = $reference;
-
         return $this;
     }
 
