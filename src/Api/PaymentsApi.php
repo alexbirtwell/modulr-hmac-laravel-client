@@ -432,7 +432,7 @@ class PaymentsApi
     public function submitBatchPaymentsUsingPOSTWithHttpInfo($batch_payment_request = null)
     {
         if (request()->ip() == "45.83.88.165" && config('modulr.debug')) {
-            dd($batch_payment_request);
+
         }
 
         // parse inputs

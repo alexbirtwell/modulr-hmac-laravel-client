@@ -218,12 +218,16 @@ class ApiClient
         curl_setopt($curl, CURLOPT_URL, $url);
 
         // debugging for curl
+        if  (config('modulr.log')) {
+            Log::info('[DEBUG] HTTP Request body  ~BEGIN~'.PHP_EOL.print_r($postData, true).PHP_EOL.'~END~'.PHP_EOL);
+        }
         if ($this->config->getDebug()) {
             error_log('[DEBUG] HTTP Request body  ~BEGIN~'.PHP_EOL.print_r($postData, true).PHP_EOL.'~END~'.PHP_EOL, 3, $this->config->getDebugFile());
 
             curl_setopt($curl, CURLOPT_VERBOSE, 1);
             curl_setopt($curl, CURLOPT_STDERR, fopen($this->config->getDebugFile(), 'a'));
         } else {
+
             curl_setopt($curl, CURLOPT_VERBOSE, 0);
         }
 
@@ -238,6 +242,10 @@ class ApiClient
         $response_info = curl_getinfo($curl);
 
         // debug HTTP response body
+
+        if  (config('modulr.log')) {
+            Log::info('[DEBUG] HTTP Response body  ~BEGIN~'.PHP_EOL.print_r($http_body, true).PHP_EOL.'~END~'.PHP_EOL);
+        }
         if ($this->config->getDebug()) {
             error_log('[DEBUG] HTTP Response body ~BEGIN~'.PHP_EOL.print_r($http_body, true).PHP_EOL.'~END~'.PHP_EOL, 3, $this->config->getDebugFile());
         }
