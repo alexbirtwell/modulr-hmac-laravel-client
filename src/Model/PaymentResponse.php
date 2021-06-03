@@ -198,7 +198,7 @@ class PaymentResponse implements ArrayAccess
         if ($this->container['status'] === null) {
             $invalid_properties[] = "'status' can't be null";
         }
-        $allowed_values = ['SUBMITTED', 'VALIDATED', 'EXT_PROC', 'PROCESSED', 'RECONCILED', 'ER_INVALID', 'ER_EXTCONN', 'ER_EXTSYS', 'ER_EXPIRED', 'ER_GENERAL', 'ER_BATCH'];
+        $allowed_values = ['PENDING_FOR_FUNDS', 'PENDING_FOR_DATE', 'SUBMITTED', 'VALIDATED', 'EXT_PROC', 'PROCESSED', 'RECONCILED', 'ER_INVALID', 'ER_EXTCONN', 'ER_EXTSYS', 'ER_EXPIRED', 'ER_GENERAL', 'ER_BATCH'];
         if (!in_array($this->container['status'], $allowed_values)) {
             $invalid_properties[] = "invalid value for 'status', must be one of 'SUBMITTED', 'VALIDATED', 'EXT_PROC', 'PROCESSED', 'RECONCILED', 'ER_INVALID', 'ER_EXTCONN', 'ER_EXTSYS', 'ER_EXPIRED', 'ER_GENERAL', 'ER_BATCH'.";
         }
