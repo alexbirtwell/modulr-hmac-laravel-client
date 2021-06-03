@@ -332,6 +332,7 @@ class PaymentResponse implements ArrayAccess
      */
     public function setStatus($status)
     {
+
         $allowed_values = ['','PENDING_FOR_FUNDS', 'PENDING_FOR_DATE','SUBMITTED', 'VALIDATED', 'EXT_PROC', 'PROCESSED', 'RECONCILED', 'ER_INVALID', 'ER_EXTCONN', 'ER_EXTSYS', 'ER_EXPIRED', 'ER_GENERAL', 'ER_BATCH'];
         if ((!in_array($status, $allowed_values))) {
             //throw new \InvalidArgumentException("$status Invalid value for 'status', must be one of 'SUBMITTED', 'VALIDATED', 'EXT_PROC', 'PROCESSED', 'RECONCILED', 'ER_INVALID', 'ER_EXTCONN', 'ER_EXTSYS', 'ER_EXPIRED', 'ER_GENERAL', 'ER_BATCH'");
