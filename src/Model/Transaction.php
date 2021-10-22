@@ -233,9 +233,9 @@ class Transaction implements ArrayAccess
         if ($this->container['type'] === null) {
             $invalid_properties[] = "'type' can't be null";
         }
-        $allowed_values = ['PI_BACS', 'PI_FAST', 'PI_DD', 'PO_FAST', 'PO_REV', 'INT_INTERC'];
+        $allowed_values = ['PI_BACS', 'PI_FAST', 'PI_DD', 'PO_FAST', 'PO_REV', 'INT_INTERC', 'SCAN'];
         if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'type', must be one of 'PI_BACS', 'PI_FAST', 'PI_DD', 'PO_FAST', 'PO_REV', 'INT_INTERC'.";
+            $invalid_properties[] = "invalid value for 'type' (".htmlspecialchars($this->container['type'])."), must be one of 'PI_BACS', 'PI_FAST', 'PI_DD', 'PO_FAST', 'PO_REV', 'INT_INTERC', 'SCAN'.";
         }
 
         return $invalid_properties;
