@@ -153,6 +153,7 @@ class Transaction implements ArrayAccess
     const TYPE_PO_FAST = 'PO_FAST';
     const TYPE_PO_REV = 'PO_REV';
     const TYPE_INT_INTERC = 'INT_INTERC';
+    const TYPE_SCAN = 'INT_SCAN';
 
     /**
      * Gets allowable values of the enum.
@@ -168,6 +169,7 @@ class Transaction implements ArrayAccess
             self::TYPE_PO_FAST,
             self::TYPE_PO_REV,
             self::TYPE_INT_INTERC,
+            self::TYPE_SCAN,
         ];
     }
 
