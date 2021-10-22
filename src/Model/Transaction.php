@@ -153,7 +153,8 @@ class Transaction implements ArrayAccess
     const TYPE_PO_FAST = 'PO_FAST';
     const TYPE_PO_REV = 'PO_REV';
     const TYPE_INT_INTERC = 'INT_INTERC';
-    const TYPE_SCAN = 'INT_SCAN';
+    const TYPE_SCAN = 'SCAN';
+    const TYPE_PI_CHAPS = 'PI_CHAPS';
 
     /**
      * Gets allowable values of the enum.
@@ -170,6 +171,7 @@ class Transaction implements ArrayAccess
             self::TYPE_PO_REV,
             self::TYPE_INT_INTERC,
             self::TYPE_SCAN,
+            self::TYPE_PI_CHAPS,
         ];
     }
 
@@ -233,9 +235,9 @@ class Transaction implements ArrayAccess
         if ($this->container['type'] === null) {
             $invalid_properties[] = "'type' can't be null";
         }
-        $allowed_values = ['PI_BACS', 'PI_FAST', 'PI_DD', 'PO_FAST', 'PO_REV', 'INT_INTERC', 'SCAN'];
+        $allowed_values = ['PI_BACS', 'PI_FAST', 'PI_DD', 'PO_FAST', 'PO_REV', 'INT_INTERC', 'SCAN', 'PI_CHAPS'];
         if (!in_array($this->container['type'], $allowed_values)) {
-            $invalid_properties[] = "invalid value for 'type' (".htmlspecialchars($this->container['type'])."), must be one of 'PI_BACS', 'PI_FAST', 'PI_DD', 'PO_FAST', 'PO_REV', 'INT_INTERC', 'SCAN'.";
+            $invalid_properties[] = "invalid value for 'type' (".htmlspecialchars($this->container['type'])."), must be one of 'PI_BACS', 'PI_FAST', 'PI_DD', 'PO_FAST', 'PO_REV', 'INT_INTERC', 'SCAN', 'PI_CHAPS'.";
         }
 
         return $invalid_properties;
@@ -540,9 +542,9 @@ class Transaction implements ArrayAccess
      */
     public function setType($type)
     {
-        $allowed_values = ['PI_BACS', 'PI_FAST', 'PI_DD', 'PO_FAST', 'PO_REV', 'INT_INTERC'];
+        $allowed_values = ['PI_BACS', 'PI_FAST', 'PI_DD', 'PO_FAST', 'PO_REV', 'INT_INTERC', 'SCAN', 'PI_CHAPS'];
         if ((!in_array($type, $allowed_values))) {
-            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'PI_BACS', 'PI_FAST', 'PI_DD', 'PO_FAST', 'PO_REV', 'INT_INTERC'");
+            throw new \InvalidArgumentException("Invalid value for 'type' (".htmlspecialchars($type)."), must be one of 'PI_BACS', 'PI_FAST', 'PI_DD', 'PO_FAST', 'PO_REV', 'INT_INTERC', 'SCAN', 'PI_CHAPS'");
         }
         $this->container['type'] = $type;
 
